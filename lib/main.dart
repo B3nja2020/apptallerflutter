@@ -1,36 +1,18 @@
+import 'package:appflutter/home_page.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 50.0, // Altura del banner
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/banner3.png'), 
-                fit: BoxFit.fill, 
-              ),
-            ),
-          ),
-        
-        ],
-      ),
+      title: 'Material App',
+      theme: ThemeData(useMaterial3: true),
+      debugShowCheckedModeBanner: false,
+      home: HomePage()
     );
   }
 }
