@@ -22,22 +22,31 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-     preferredSize: Size(100, 60),           
-     child: SafeArea(
-       child: Container(
-         height: 80,
-         color: Colors.red,
-         child:Image.asset('assets/banner3.png',fit: BoxFit.fill,)
-         ,
-       ),
-     ),
-        // title:Image.asset('assets/banner3.png', fit:BoxFit.fill),
-        // centerTitle: true,
-        // toolbarHeight: 60.0,
-        
+      preferredSize: Size(100, 60),
+      child: SafeArea(
+        child: Container(
+          height: 70,
+          decoration: BoxDecoration(
+            color: Colors.red,
+            boxShadow: [
+              BoxShadow(
+                color: const Color.fromARGB(255, 99, 99, 99), 
+                blurRadius: 5.0,    
+                offset: Offset(0, 2), 
+              ),
+            ],
+          ),
+          child: Image.asset('assets/banner3.png', fit: BoxFit.fill),
+        ),
       ),
+    ),
       body: screens[_currentIndex],
     bottomNavigationBar:GNav(
+      activeColor: Colors.white,
+      color: Colors.grey,
+      backgroundColor: const Color.fromARGB(255, 34, 34, 34),
+      padding: EdgeInsets.symmetric(horizontal:20 ,vertical:18 ),
+
       selectedIndex: _currentIndex,
       onTabChange: (index)=>{
         setState(()=>_currentIndex =index)
@@ -46,24 +55,22 @@ class _HomePageState extends State<HomePage> {
         GButton(
           icon: Icons.home,
           text: 'home',
-          // iconActiveColor: Colors.white,
-          // textColor: Colors.white,
+      
           ),
           GButton(
           icon: Icons.catching_pokemon,
           text: 'soporte',
-          // iconActiveColor: Colors.white,
-          // textColor: Colors.white,
+         
           ),
           GButton(
-          icon: Icons.person,
-          text: 'perfil',
-          // iconActiveColor: Colors.white,
-          // textColor: Colors.white,
+          icon: Icons.bar_chart,
+          text: 'metrica',
+         
           ),
         
 
       ],
+      
        ) ,
     );
   }

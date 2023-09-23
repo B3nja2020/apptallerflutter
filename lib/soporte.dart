@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
 
-class SoportePage extends StatelessWidget {
+class SoportePage extends StatefulWidget {
+  @override
+  _SoportePageState createState() => _SoportePageState();
+}
+
+class _SoportePageState extends State<SoportePage> {
+  final TextEditingController nombreController = TextEditingController();
+  final TextEditingController contactoController = TextEditingController();
+  final TextEditingController descripcionController = TextEditingController();
+
   final PageController _pageController = PageController();
   final List<String> consejos = [
     'Proporciona una alimentación equilibrada y adecuada para tu mascota.',
     'Asegúrate de que tu mascota tenga suficiente ejercicio y actividad física.',
     'Programa revisiones veterinarias regulares para mantener la salud de tu mascota.',
   ];
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +34,7 @@ class SoportePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () {          
+              onTap: () {
                 showDialog(
                   context: context,
                   builder: (context) {
@@ -43,23 +58,47 @@ class SoportePage extends StatelessWidget {
                 leading: Icon(Icons.comment),
               ),
             ),
-            Divider(), 
+            Divider(),
             InkWell(
-              onTap: () {               
+              onTap: () {
                 showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
                       title: Text('Notificar Animal en Abandono'),
-                      content: Text('Completa el formulario de notificación.'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Text('Cerrar'),
+                      content: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            // creacion formulario
+                            TextFormField(
+                              controller: nombreController,
+                              decoration: InputDecoration(labelText: 'Nombre'),
+                            ),
+                            TextFormField(
+                              controller: contactoController,
+                              decoration: InputDecoration(labelText: 'Contacto'),
+                            ),
+                            TextFormField(
+                              controller: descripcionController,
+                              decoration: InputDecoration(labelText: 'Descripción'),
+                              maxLines: 3,
+                            ),
+                            SizedBox(height: 10),
+                            ElevatedButton(
+                              onPressed: () {
+                                // agregar mas datos a futuro
+                                final nombre = nombreController.text;
+                                final contacto = contactoController.text;
+                                final descripcion = descripcionController.text;
+
+                                
+                                Navigator.of(context).pop();
+                              },
+                              child: Text('Enviar'),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     );
                   },
                 );
@@ -69,9 +108,9 @@ class SoportePage extends StatelessWidget {
                 leading: Icon(Icons.report),
               ),
             ),
-            Divider(), 
+            Divider(),
             InkWell(
-              onTap: () {                
+              onTap: () {
                 showDialog(
                   context: context,
                   builder: (context) {
@@ -101,7 +140,6 @@ class SoportePage extends StatelessWidget {
                                 IconButton(
                                   icon: Icon(Icons.arrow_back),
                                   onPressed: () {
-                                    //retroceder
                                     _pageController.previousPage(
                                       duration: Duration(milliseconds: 300),
                                       curve: Curves.easeInOut,
@@ -117,7 +155,6 @@ class SoportePage extends StatelessWidget {
                                 IconButton(
                                   icon: Icon(Icons.arrow_forward),
                                   onPressed: () {
-                                    // Avanzar consejo
                                     _pageController.nextPage(
                                       duration: Duration(milliseconds: 300),
                                       curve: Curves.easeInOut,
