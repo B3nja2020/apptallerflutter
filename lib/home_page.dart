@@ -1,7 +1,11 @@
+import 'package:appflutter/donar.dart';
+import 'package:appflutter/galeria.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:appflutter/soporte.dart';
 import 'package:appflutter/metrica.dart';
+
+
 
 
 class HomePage extends StatefulWidget {
@@ -14,9 +18,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final screens =[
-    const Center(child:Text('inicio',style:TextStyle(fontSize: 45))),
+    GaleriaPage(),
     SoportePage(),
+    DonarPage(),
     PaginaMetricas()
+    
   ];
   @override
   Widget build(BuildContext context) {
@@ -60,6 +66,11 @@ class _HomePageState extends State<HomePage> {
           GButton(
           icon: Icons.catching_pokemon,
           text: 'soporte',
+         
+          ),
+          GButton(
+          icon: Icons.monetization_on,
+          text: 'Donaciones',
          
           ),
           GButton(

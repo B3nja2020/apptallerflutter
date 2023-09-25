@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SoportePage extends StatefulWidget {
   @override
@@ -69,7 +70,7 @@ class _SoportePageState extends State<SoportePage> {
                       content: SingleChildScrollView(
                         child: Column(
                           children: [
-                            // creacion formulario
+                            // Formulario para notificar animal en abandono
                             TextFormField(
                               controller: nombreController,
                               decoration: InputDecoration(labelText: 'Nombre'),
@@ -86,12 +87,15 @@ class _SoportePageState extends State<SoportePage> {
                             SizedBox(height: 10),
                             ElevatedButton(
                               onPressed: () {
-                                // agregar mas datos a futuro
-                                final nombre = nombreController.text;
-                                final contacto = contactoController.text;
-                                final descripcion = descripcionController.text;
+                                // Aquí puedes acceder a los valores del formulario
+                                // final nombre = nombreController.text;
+                                // final contacto = contactoController.text;
+                                // final descripcion = descripcionController.text;
 
-                                
+                                // Haz lo que necesites con los datos del formulario
+                                // Por ejemplo, puedes enviarlos a un servidor o realizar alguna acción.
+                                // ...
+
                                 Navigator.of(context).pop();
                               },
                               child: Text('Enviar'),
@@ -175,6 +179,17 @@ class _SoportePageState extends State<SoportePage> {
                 leading: Icon(Icons.lightbulb),
               ),
             ),
+            Divider(),
+            InkWell(
+              onTap: () {
+                final phoneNumber = '+56912345678';
+                launch('tel:$phoneNumber');
+              },
+              child: ListTile(
+                title: Text('Contáctanos'),
+                leading: Icon(Icons.phone),
+              ),
+            ),         
           ],
         ),
       ),
