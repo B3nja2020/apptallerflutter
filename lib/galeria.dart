@@ -21,7 +21,7 @@ class GaleriaPage extends StatelessWidget {
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Cambia el número de columnas según tus necesidades
+          crossAxisCount: 2, 
         ),
         itemCount: imagenes.length,
         itemBuilder: (context, index) {
@@ -97,7 +97,7 @@ class DetalleImagen extends StatelessWidget {
                  
                 },
               ),
-              Text('0'), // Muestra la cantidad de "Me gusta".
+              Text('0'),//aca van los megusta a futuro
             ],
           ),
         ],

@@ -70,7 +70,7 @@ class _SoportePageState extends State<SoportePage> {
                       content: SingleChildScrollView(
                         child: Column(
                           children: [
-                            // Formulario para notificar animal en abandono
+                            
                             TextFormField(
                               controller: nombreController,
                               decoration: InputDecoration(labelText: 'Nombre'),
@@ -87,14 +87,7 @@ class _SoportePageState extends State<SoportePage> {
                             SizedBox(height: 10),
                             ElevatedButton(
                               onPressed: () {
-                                // Aquí puedes acceder a los valores del formulario
-                                // final nombre = nombreController.text;
-                                // final contacto = contactoController.text;
-                                // final descripcion = descripcionController.text;
-
-                                // Haz lo que necesites con los datos del formulario
-                                // Por ejemplo, puedes enviarlos a un servidor o realizar alguna acción.
-                                // ...
+                                
 
                                 Navigator.of(context).pop();
                               },
