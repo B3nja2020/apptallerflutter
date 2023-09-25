@@ -18,8 +18,7 @@ class DonarPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Agrega aquí la lógica para procesar la donación
-                // Puedes implementar una pasarela de pago, formulario, etc.
+                
               },
               child: Text('Donar Ahora'),
             ),
