@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MyAppLogin extends StatefulWidget {
-  MyAppLogin({Key, key}) : super(key: key);
-
-  @override
-  _MyAppLogin createState() => _MyAppLogin();
+void main() {
+  runApp (MaterialApp
+    (
+      debugShowCheckedModeBanner: false,
+      home: MyAppLogin(),
+    )
+  );
 }
 
-class _MyAppLogin extends State<MyAppLogin> {
+class MyAppLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[100],
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 90.0),
         children: <Widget>[
@@ -62,7 +63,7 @@ class _MyAppLogin extends State<MyAppLogin> {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.lightBlue)),
-                  onPressed: () {},
+                  onPressed: () {}, //Se consultará si existe la cuenta
                   child: Text(
                     'Iniciar sesión',
                     style: TextStyle(
