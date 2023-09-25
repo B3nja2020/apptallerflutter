@@ -11,12 +11,12 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           FractionalTranslation(
-            translation: Offset(0.0, -0.65), // Mueve la imagen hacia arriba
+            translation: Offset(0.0, -0.65), 
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/testeo.png'),
-                  fit: BoxFit.cover, // Ajusta la imagen para cubrir toda la pantalla
+                  fit: BoxFit.cover, 
                 ),
               ),
             ),
@@ -26,23 +26,23 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/aaaa.png', // Ruta de tu imagen de logo
-                  width: 150, // Ajusta el tamaño de la imagen según tus necesidades
+                  'assets/aaaa.png', 
+                  width: 150, 
                   height: 150,
                 ),
                 SizedBox(height: 20),
-                Card( // Envuelve el formulario en un Card
-                  elevation: 8, // Elevación para dar profundidad al Card
-                  margin: EdgeInsets.all(16), // Márgenes alrededor del Card
+                Card( 
+                  elevation: 8, 
+                  margin: EdgeInsets.all(16), 
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
                         Text(
-                          'Iniciar Sesión', // Título dentro del Card
+                          'Iniciar Sesión', 
                           style: TextStyle(
-                            fontSize: 24, // Tamaño de fuente del título
-                            fontWeight: FontWeight.bold, // Negrita
+                            fontSize: 24, 
+                            fontWeight: FontWeight.bold, 
                           ),
                         ),
                         SizedBox(height: 20),
@@ -74,8 +74,8 @@ class LoginPage extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.red, // Fondo rojo
-                            onPrimary: Colors.white, // Texto blanco
+                            primary: Colors.red, 
+                            onPrimary: Colors.white, 
                           ),
                           child: Text('Iniciar Sesión'),
                         ),

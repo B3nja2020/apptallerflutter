@@ -31,7 +31,7 @@ class GaleriaPage extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => DetalleImagen(
                     imagenUrl: imagenes[index],
-                    nombreImagen: nombres[index], // Pasamos el nombre aquí
+                    nombreImagen: nombres[index], 
                   ),
                 ),
               );
@@ -69,7 +69,7 @@ class DetalleImagen extends StatelessWidget {
           Expanded(
             child: Image.asset(
               imagenUrl,
-              fit: BoxFit.contain, // Usamos BoxFit.contain para ajustar la imagen a la ventana
+              fit: BoxFit.contain, 
             ),
           ),
           Padding(
@@ -94,7 +94,7 @@ class DetalleImagen extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.favorite),
                 onPressed: () {
-                  // Agrega aquí la lógica para darle "Me gusta" a la imagen.
+                 
                 },
               ),
               Text('0'), // Muestra la cantidad de "Me gusta".
